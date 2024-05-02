@@ -38,7 +38,7 @@ cdi = api_hook$filter(
 )
 ```
 
-You can explore these data with `dplyr`. For example, this will get you all weekly measles data in Ontario (something to work with anyways).
+You can explore these 'data' with `dplyr`. For example, this will get you all weekly measles data in Ontario (something to work with anyways).
 
 ```
 measles_wk_on = (cdi

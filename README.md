@@ -75,10 +75,10 @@ $$
 
 Quiz: Use `dplyr` and something like the `difftime` function to produce a column measuring the number of years since the first observation in the dataset.
 
-'''
+```
 measles_wk_on <- measles_wk_on %>%
   mutate(years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
-'''
+```
 
 Quiz: Make a Lomb-Scargle periodogram of the 'number of years' variable as the time variable and the incidence rate as the series variable (or whatever the `lomb::lsp` function calls it.
 

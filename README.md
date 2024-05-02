@@ -1,6 +1,8 @@
 # periodicity
 Repository for work on analyses of periodicity in Canadian communicable disease incidence
 
+Quiz: Create a section in this document with links to the various references that we have talked about so far.
+
 ## Dependencies
 
 This project requires installing several R dependencices.

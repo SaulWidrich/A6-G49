@@ -81,6 +81,10 @@ measles_wk_on <- measles_wk_on %>%
 
 Quiz: Make a Lomb-Scargle periodogram of the 'number of years' variable as the time variable and the incidence rate as the series variable (or whatever the `lomb::lsp` function calls it.
 
+```
+periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
+
+```
 ### Seasonality Statistics
 
 Develop statistics for measuring the 'seasonality' of a disease (Steve 90% understands this).

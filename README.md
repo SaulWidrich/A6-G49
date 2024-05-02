@@ -108,3 +108,6 @@ Develop code for estimating where the peaks and troughs are within a cycle of a 
 
 Develop code for estimating 
 
+## References: 
+R for data science: https://r4ds.had.co.nz
+Background on Mathematical Epidemiology: https://davidearn.mcmaster.ca/opportunities

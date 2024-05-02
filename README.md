@@ -46,6 +46,35 @@ measles_wk_on = (cdi
 
 ## Project Goals
 
-0. Periodograms : Be able to create a periodogram for any dataset with un-evenly sampled incidence data (SW fully understands this)
-1. Seasonality Statistics : Develop statistics for measuring the 'seasonality' of a disease (SW 90% understands this)
-2. Develop code for estimating 
+0. Periodograms
+1. Seasonality Statistics
+2. Phase Estimationperiod
+3. Time-Varying Periodograms
+
+## Shared Notebook
+
+### Periodograms
+
+Be able to create a periodogram for any dataset with un-evenly sampled incidence data (Steve fully understands this). This is a warm-up to the research that will involve getting comfortable with manipulating data and using the `lomb`  package and maybe others that we encounter.
+
+Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
+
+Hint:
+$$
+daily\_rate = 10^5 \times \frac{\mathtt{cases\_this\_period}}{ \mathtt{days\_this\_period} \times \mathtt{population}}
+$$
+
+### Seasonality Statistics
+
+Develop statistics for measuring the 'seasonality' of a disease (SW 90% understands this).
+
+
+### Phase Estimation
+
+Develop code for estimating where the peaks and troughs are within a cycle of a particular period.
+
+
+### Time-Varying Periodograms
+
+Develop code for estimating 
+

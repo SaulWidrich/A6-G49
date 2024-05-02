@@ -19,7 +19,7 @@ install.packages("iidda.api"
 Here are some others that I also recommend (but we might need more / fewer).  They can be installed in this way.
 
 ```
-install.packages(c("iidda", "iidda.analysis", "iidda.api", "dplyr", "lubridate", 
+install.packages(c("dplyr", "lubridate", 
 "broom", "Hmisc", "readr", "jsonlite", "ggplot2", "patchwork", 
 "grDevices", "gt", "lomb"))
 ```

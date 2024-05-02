@@ -21,7 +21,7 @@ Here are some others that I also recommend (but we might need more / fewer).  Th
 ```
 install.packages(c("dplyr", "lubridate", 
 "broom", "Hmisc", "readr", "jsonlite", "ggplot2", "patchwork", 
-"grDevices", "gt", "lomb"))
+"grDevices", "lomb"))
 ```
 
 ## Getting the Data
@@ -30,14 +30,19 @@ This project will use data that can be obtained using this command in R.
 
 ```
 api_hook = iidda.api::ops_staging
-canmod_cdi_api = api_hook$filter(
+cdi = api_hook$filter(
     resource_type = "CANMOD CDI"
   , iso_3166 = "CA"
 )
 ```
 
+You can explore these data with `dplyr`. For example, this will get you all weekly measles data in Ontario (something to work with anyways).
 
-
+```
+measles_wk_on = (cdi
+  |> filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "wk")
+)
+```
 
 ## Project Goals
 

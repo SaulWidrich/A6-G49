@@ -62,11 +62,11 @@ Steve and Saul will both collaborate to produce this project notebook.  This is 
 Be able to create a periodogram for any dataset with un-evenly sampled incidence data (Steve fully understands this). This is a warm-up to the research that will involve getting comfortable with manipulating data and using the `lomb`  package and maybe others that we encounter.
 
 Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
-
+```
 print(measles_wk_on %>% 
   mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population)) %>% 
   select(daily_rate))
-
+```
 Hint:
 
 $$

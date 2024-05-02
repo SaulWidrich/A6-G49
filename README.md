@@ -63,9 +63,8 @@ Be able to create a periodogram for any dataset with un-evenly sampled incidence
 
 Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
 ```
-print(measles_wk_on %>% 
-  mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population)) %>% 
-  select(daily_rate))
+measles_wk_on <- measles_wk_on %>% 
+        mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population))
 ```
 Hint:
 

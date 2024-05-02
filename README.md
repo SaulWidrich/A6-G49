@@ -67,7 +67,28 @@ $$
 
 ### Seasonality Statistics
 
-Develop statistics for measuring the 'seasonality' of a disease (SW 90% understands this).
+Develop statistics for measuring the 'seasonality' of a disease (Steve 90% understands this).
+
+We have tried dividing the sum of the power 'near' (defining what this means is part of the problem) a period of 1-year by the sum of the power over a 'broader' (defining what this means is part of the problem) range of periods.  This is a good start because this statistic will tend to be higher when there is relatively more power around periods of one year.
+
+In general we are considering statistics of the following form.
+
+$$
+\text{seasonality} = \frac{\sum_{i \in \Omega} y_i }{\sum_i y_i}
+$$
+
+Where $y_i$ is the thing on the y-axis of a periodogram associated with period given by $x_i$, and where $\Omega$ is the set of periods 'near' periods of interest (i.e. one year).
+
+Issues:
+
+1. When comparing diseases the periodograms might have different numbers of frequencies sampled and therefore the size of $\Omega$ relative to the full range of frequencies might be different. To make things more comparable across diseases we might want to consider using averages and not sums in the above formula (Steve is currently unsure).
+2. Do we want to put periods in $\Omega$ that are near 1, 2, 3, ..., years or just near 1 year.
+3. Do we want to measure 'nearness' as any frequency +/- some tolerance, as the one frequency that is closest to the target period (e.g. 1 year). One thing I think is for sure is that we want to be measuring nearness in frequencies and not periods because frequencies are evenly spaced whereas periods are not (Quiz: What does this mean?  Hint: look at the differences between adjacent periods versus adjacent frequencies in Lomb-Scargle output).
+4. Do we want our seasonality statistic to be more sensitive to periods under a year, over a year, or something balanced? For example, which is less seasonal -- a disease that has lots of power less than a year but not much greater than a year, or vice versa? This issue is related to the fact of uneven sampling of periods and even sampling of frequencies.
+5. Do we want to normalize in some way over diseases so that, say, the most seasonal disease is 100 or somthing and the maximally unseasonal disease is 0?
+
+
+Goal: Design and conduct a simulation study that we can do that will rank a set of diseases by seasonality differently depending on different methodological choices listed in these issues. The outcome of the experiment can be the correlation of the ranks with some baseline method. If the correlations are high it says that the methodological choices do not matter.  If the correlations are low it says that they do matter.  Trying to be clearer ... for every disease we will compute a set of `n` seasonality statistics.  We get these different seasonality statistics by making different methodological choices.  Then we calculate the correlations between the statistics (Hint: `cor` function in R). See [this](https://en.wikipedia.org/wiki/Correlation_coefficient) for background on correlation coefficients.
 
 
 ### Phase Estimation

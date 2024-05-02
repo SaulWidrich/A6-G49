@@ -62,7 +62,7 @@ Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily
 Hint:
 
 $$
-\text{daily\_rate} = 10^5 \times \frac{\text{cases\_this\_period}}{ \text{days\_this\_period} \times \text{population}}
+\text{daily_rate} = 10^5 \times \frac{\text{cases_this_period}}{ \text{days_this_period} \times \text{population}}
 $$
 
 ### Seasonality Statistics

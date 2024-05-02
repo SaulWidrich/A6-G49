@@ -61,7 +61,7 @@ Steve and Saul will both collaborate to produce this project notebook.  This is 
 
 Be able to create a periodogram for any dataset with un-evenly sampled incidence data (Steve fully understands this). This is a warm-up to the research that will involve getting comfortable with manipulating data and using the `lomb`  package and maybe others that we encounter.
 
-*Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
+*Quiz*: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
 ```
 measles_wk_on <- measles_wk_on %>% 
         mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population))
@@ -72,14 +72,14 @@ $$
 \text{daily-rate} = 10^5 \times \frac{\text{cases-this-period}}{ \text{days-this-period} \times \text{population}}
 $$
 
-Quiz: Use `dplyr` and something like the `difftime` function to produce a column measuring the number of years since the first observation in the dataset.
+*Quiz*: Use `dplyr` and something like the `difftime` function to produce a column measuring the number of years since the first observation in the dataset.
 
 ```
 measles_wk_on <- measles_wk_on %>%
   mutate(years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
 ```
 
-Quiz: Make a Lomb-Scargle periodogram of the 'number of years' variable as the time variable and the incidence rate as the series variable (or whatever the `lomb::lsp` function calls it.
+*Quiz*: Make a Lomb-Scargle periodogram of the 'number of years' variable as the time variable and the incidence rate as the series variable (or whatever the `lomb::lsp` function calls it.
 
 ```
 periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")

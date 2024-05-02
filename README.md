@@ -60,8 +60,9 @@ Be able to create a periodogram for any dataset with un-evenly sampled incidence
 Quiz: Use `dplyr` to update the `measles_wk_on` example above to contain a daily incidence rate.
 
 Hint:
+
 $$
-daily\_rate = 10^5 \times \frac{\mathtt{cases\_this\_period}}{ \mathtt{days\_this\_period} \times \mathtt{population}}
+\text{daily\_rate} = 10^5 \times \frac{\text{cases\_this\_period}}{ \text{days\_this\_period} \times \text{population}}
 $$
 
 ### Seasonality Statistics

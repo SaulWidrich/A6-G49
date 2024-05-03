@@ -4,27 +4,31 @@ author: "Saul Widrich"
 date: "2024-05-03"
 output: html_document
 ---
-
+# Load required packages
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(iidda.api)  
+library(dplyr)      
 ```
+# Retrieve and filter data
+```{r, message=FALSE}
+api_hook <- iidda.api::ops_staging
+cdi <- api_hook$filter(
+    resource_type = "CANMOD CDI",
+    iso_3166 = "CA"
+)
+```   
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+# Perform data analysis using the pipe operator
+```{r}
+measles_wk_on <- cdi %>%
+  filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "wk") %>%
+  mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population),
+         years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
 ```
+# Periodogram (both frequency and period)
 
-## Including Plots
+```{r}
+periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

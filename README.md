@@ -132,6 +132,7 @@ Develop code for estimating
 * R for data science: https://r4ds.had.co.nz
 * Background on Mathematical Epidemiology: https://davidearn.mcmaster.ca/opportunities
 * Lomb Package: [LOMB Package pdf](lomb.pdf)
+* Paper on Lomb Scargle Periodogram [Paper](https://www.researchgate.net/publication/283359043_Phase_estimation_with_the_Lomb-Scargle_periodogram_method)
 
 
 

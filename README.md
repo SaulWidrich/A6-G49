@@ -129,3 +129,4 @@ Develop code for estimating
 
 * R for data science: https://r4ds.had.co.nz
 * Background on Mathematical Epidemiology: https://davidearn.mcmaster.ca/opportunities
+* Input more references here:

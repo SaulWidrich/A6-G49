@@ -5,8 +5,8 @@ Repository for work on analyses of periodicity in Canadian communicable disease 
 
 - [x] Install the dependencies
 - [x] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
-- [ ] Clone the repository locally
-- [ ] Create a directory with an `Rmd` file for Saul's initial learning/exploration
+- [x] Clone the repository locally
+- [x] Create a directory with an `Rmd` file for Saul's initial learning/exploration
 
 ## Dependencies
 

@@ -1,7 +1,12 @@
 # periodicity
 Repository for work on analyses of periodicity in Canadian communicable disease incidence
 
+## Broad Setup
+
+- [x] Install the dependencies
 - [ ] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
+- [ ] Clone the repository
+- [ ] Create a directory with an `Rmd` file for Saul's initial learning/exploration
 
 ## Dependencies
 

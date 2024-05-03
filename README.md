@@ -4,7 +4,7 @@ Repository for work on analyses of periodicity in Canadian communicable disease 
 ## Broad Setup
 
 - [x] Install the dependencies
-- [ ] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
+- [x] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
 - [ ] Clone the repository locally
 - [ ] Create a directory with an `Rmd` file for Saul's initial learning/exploration
 
@@ -129,10 +129,10 @@ Develop code for estimating
 
 ## References: 
 
-* R for data science: https://r4ds.had.co.nz
-* Background on Mathematical Epidemiology: https://davidearn.mcmaster.ca/opportunities
-* Lomb Package: [LOMB Package pdf](lomb.pdf)
-* Paper on Lomb Scargle Periodogram [Paper](https://www.researchgate.net/publication/283359043_Phase_estimation_with_the_Lomb-Scargle_periodogram_method)
+* [R for Data Science](https://r4ds.had.co.nz)
+* [Background on Mathematical Epidemiology](https://davidearn.mcmaster.ca/opportunities)
+* [LOMB Package Vignette](lomb.pdf)
+* [Paper on Lomb Scargle Periodogram](https://www.researchgate.net/publication/283359043_Phase_estimation_with_the_Lomb-Scargle_periodogram_method)
 
 
 

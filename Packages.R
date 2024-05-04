@@ -9,4 +9,5 @@ install.packages(c("dplyr", "lubridate",
                    "broom", "Hmisc", "readr", "jsonlite", "ggplot2", "patchwork", 
                    "grDevices", "lomb"))
 
-
+install.packages("rmarkdown")
+library (markdown)

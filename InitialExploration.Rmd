@@ -28,7 +28,15 @@ measles_wk_on <- cdi %>%
 # Periodogram (both frequency and period)
 
 ```{r}
-periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
+periodogram1 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
 
-periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
+periodogram2 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
 ```
+
+**Some things I'm confused about:**
+
+* When running a frequency type periodogram it says there is a peak at 0.13, this looks like a trough tho. 
+* Clarify significance level vs alpha, in STATS 2MB3 these were the same?
+* When running R Mark down file in github I can't see the knitted output.
+* Do I want R mark down file as HTML or PDF, what's the difference?
+

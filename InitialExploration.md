@@ -1,44 +1,51 @@
----
-title: "Exploration"
-author: "Saul Widrich"
-date: "2024-05-03"
-output: rmarkdown::github_document
----
+Exploration
+================
+Saul Widrich
+2024-05-03
+
 # Load required packages
-```{r setup, include=FALSE}
-library(iidda.api)  
-library(dplyr)      
-```
+
 # Retrieve and filter data
-```{r, message=FALSE}
+
+``` r
 api_hook <- iidda.api::ops_staging
 cdi <- api_hook$filter(
     resource_type = "CANMOD CDI",
     iso_3166 = "CA"
 )
-```   
+```
 
 # Perform data analysis using the pipe operator
-```{r}
+
+``` r
 measles_wk_on <- cdi %>%
   filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "wk") %>%
   mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population),
          years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
 ```
+
 # Periodogram (both frequency and period)
 
-```{r}
+``` r
 periodogram1 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
+```
 
+![](InitialExploration_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+``` r
 periodogram2 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
 ```
 
-**Some things I'm confused about:**
+![](InitialExploration_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->
 
-* When running a frequency type periodogram it says there is a peak at 0.13, this looks like a trough tho. 
-* Clarify significance level vs alpha, in STATS 2MB3 these were the same?
-* When running R Mark down file in github I can't see the knitted output.
-* Do I want R mark down file as HTML or PDF, what's the difference?
-* Do I need to sign the commits?
-* I had to merge something and I'm not sure why!
+**Some things I’m confused about:**
 
+- When running a frequency type periodogram it says there is a peak at
+  0.13, this looks like a trough tho.
+- Clarify significance level vs alpha, in STATS 2MB3 these were the
+  same?
+- When running R Mark down file in github I can’t see the knitted
+  output.
+- Do I want R mark down file as HTML or PDF, what’s the difference?
+- Do I need to sign the commits?
+- I had to merge something and I’m not sure why!

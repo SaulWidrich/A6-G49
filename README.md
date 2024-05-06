@@ -140,7 +140,8 @@ Develop code for estimating
 *[Paper on Generalized Lomb-Scargle Periodogram](https://arxiv.org/pdf/0901.2573)
 
 # Some Videos: 
-[Foundation of Spectral Analysis] (https://www.youtube.com/watch?v=-rz6OtG0Aq0&t=1180s)
+* [Foundation of Spectral Analysis](https://www.youtube.com/watch?v=-rz6OtG0Aq0&t=1180s)
+[Foundation of Regression](https://www.youtube.com/watch?v=eYTumjgE2IY)
 
 
 

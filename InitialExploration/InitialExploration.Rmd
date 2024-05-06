@@ -2,7 +2,7 @@
 title: "Exploration"
 author: "Saul Widrich"
 date: "2024-05-03"
-output: rmarkdown::github_document
+output: html_document
 ---
 # Load required packages
 ```{r setup, include=FALSE}

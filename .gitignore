@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 periodicity.Rproj
+InitialExploration_files/*.png
+*.html

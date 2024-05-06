@@ -8,6 +8,10 @@ Repository for work on analyses of periodicity in Canadian communicable disease 
 - [x] Clone the repository locally
 - [x] Create a directory with an `Rmd` file for Saul's initial learning/exploration
 
+## Periodogram Tasks
+
+- [ ] Use `gLmb` function in the `spectral` package to fit Lomb-Scargle periodograms and compare with the `lomb` package.
+
 ## Dependencies
 
 This project requires installing several R dependencices.

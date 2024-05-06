@@ -4,9 +4,13 @@ Repository for work on analyses of periodicity in Canadian communicable disease 
 ## Broad Setup
 
 - [x] Install the dependencies
-- [ ] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
-- [ ] Clone the repository locally
-- [ ] Create a directory with an `Rmd` file for Saul's initial learning/exploration
+- [x] Create a section in this document with links to the various references that we have talked about so far (at the bottom)
+- [x] Clone the repository locally
+- [x] Create a directory with an `Rmd` file for Saul's initial learning/exploration
+
+## Periodogram Tasks
+
+- [ ] Use `gLmb` function in the `spectral` package to fit Lomb-Scargle periodograms and compare with the `lomb` package.
 
 ## Dependencies
 
@@ -87,7 +91,9 @@ measles_wk_on <- measles_wk_on %>%
 *Quiz*: Make a Lomb-Scargle periodogram of the 'number of years' variable as the time variable and the incidence rate as the series variable (or whatever the `lomb::lsp` function calls it.
 
 ```
-periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
+periodogram <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True"
+
+??lomb
 
 ```
 ### Seasonality Statistics
@@ -127,6 +133,10 @@ Develop code for estimating
 
 ## References: 
 
-* R for data science: https://r4ds.had.co.nz
-* Background on Mathematical Epidemiology: https://davidearn.mcmaster.ca/opportunities
-* Input more references here:
+* [R for Data Science](https://r4ds.had.co.nz)
+* [Background on Mathematical Epidemiology](https://davidearn.mcmaster.ca/opportunities)
+* [LOMB Package Vignette](lomb.pdf)
+* [Paper on Lomb Scargle Periodogram](https://www.researchgate.net/publication/283359043_Phase_estimation_with_the_Lomb-Scargle_periodogram_method)
+
+
+

@@ -137,6 +137,10 @@ Develop code for estimating
 * [Background on Mathematical Epidemiology](https://davidearn.mcmaster.ca/opportunities)
 * [LOMB Package Vignette](lomb.pdf)
 * [Paper on Lomb Scargle Periodogram](https://www.researchgate.net/publication/283359043_Phase_estimation_with_the_Lomb-Scargle_periodogram_method)
+*[Paper on Generalized Lomb-Scargle Periodogram](https://arxiv.org/pdf/0901.2573)
+
+# Some Videos: 
+[Foundation of Spectral Analysis] (https://www.youtube.com/watch?v=-rz6OtG0Aq0&t=1180s)
 
 
 

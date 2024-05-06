@@ -21,7 +21,7 @@ cdi <- api_hook$filter(
 # Perform data analysis using the pipe operator
 ```{r}
 measles_wk_on <- cdi %>%
-  filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "wk") %>%
+  filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "mnh") %>%
   mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population),
          years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
 ```

@@ -7,7 +7,8 @@ output: html_document
 # Load required packages
 ```{r setup, include=FALSE}
 library(iidda.api)  
-library(dplyr)      
+library(dplyr)
+library(ggplot2)
 ```
 # Retrieve and filter data
 ```{r, message=FALSE}
@@ -22,15 +23,46 @@ cdi <- api_hook$filter(
 ```{r}
 measles_wk_on <- cdi %>%
   filter(disease == "measles", iso_3166_2 == "CA-ON", time_scale == "wk") %>%
-  mutate(daily_rate = 10^5 * cases_this_period / (days_this_period * population),
-         years_since_first_observation = as.numeric((period_start_date - min(period_start_date)) / (365.25)))
+  mutate(
+      daily_rate = 10^5 * cases_this_period / (days_this_period * population)
+    , year_num = as.numeric(as.Date(period_mid_date)) / 365
+  )
+(ggplot(measles_wk_on) 
+ + geom_line(aes(period_mid_date, daily_rate))
+ + scale_x_date(date_minor_breaks = "year")
+)
+
 ```
+
+
 # Periodogram (both frequency and period)
 
+What does the early time series look like?
 ```{r}
-periodogram1 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'period', plot = "True")
+early_measles = filter(measles_wk_on
+  , period_mid_date < as.Date("1970-01-01")
+)
 
-periodogram2 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
+(ggplot(early_measles) 
+ + geom_line(aes(period_mid_date, daily_rate))
+ + scale_x_date(date_minor_breaks = "year")
+)
+
+```
+```{r}
+periodogram_steve_style <- lomb::lsp(
+    early_measles$year_num
+  , early_measles$daily_rate
+  , type = 'period'
+  , plot = "True"
+  , from = 1/4
+  , to = 4
+  , ofac = 20
+)
+
+periodogram1 <- lomb::lsp(measles_wk_on$year_num, measles_wk_on$daily_rate, type = 'period', plot = "True")
+
+periodogram2 <- lomb::lsp(measles_wk_on$year_num, measles_wk_on$daily_rate, type = 'frequency', plot = "True")
 ```
 
 **Some things I'm confused about:**
@@ -41,4 +73,3 @@ periodogram2 <- lomb::lsp(measles_wk_on$years_since_first_observation, measles_w
 * Do I want R mark down file as HTML or PDF, what's the difference?
 * Do I need to sign the commits?
 * I had to merge something and I'm not sure why!
-
